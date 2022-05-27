@@ -17,4 +17,6 @@ jobs:
       - name: release the gem
         run: |
           rake "compare_versions[$GITHUB_REF]"
-          rake get_version
+          gem build
+          gem push ruby_play-$(rake get_version).gem
+          
