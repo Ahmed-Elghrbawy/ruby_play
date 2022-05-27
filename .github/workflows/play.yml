@@ -19,4 +19,5 @@ jobs:
           rake "compare_versions[$GITHUB_REF]"
           gem build -V
           gem push ruby_play-$(rake get_version).gem -V
+          echo "here"
           
