@@ -17,6 +17,7 @@ jobs:
       - name: release the gem
         run: |
           rake "compare_versions[$GITHUB_REF]"
+          echo "$GEM_HOST_API_KEY"
           gem build -V
           gem push ruby_play-$(rake get_version).gem -V
           echo "here"
