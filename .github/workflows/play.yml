@@ -20,6 +20,6 @@ jobs:
         run: |
           rake "compare_versions[$GITHUB_REF]"
           gem build -V
-          gem push ruby_play-$(rake get_version).gem -V
+          gem push ruby_play-$(rake get_version).gem -V --otp ${{ secrets.RUBY_OTP_CODE }}
           echo "here"
           
